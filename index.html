@@ -17,25 +17,52 @@
       <div class="nav__container">
         <img class="nav__logo" src="./images/logo.svg" alt="logo image">
         <ul class="nav__list">
-          <li class="nav__item">
-            Features
-            <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg">
-              <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
-            </svg>
+          <li class="nav__item nav__item--dropdown">
+            <a class="nav__link" href="#">
+              Features
+            </a>
+            <div class="nav__dropdown nav__dropdown--features">
+              <ul class="nav__dropdownList">
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--todoList">
+                  <a href="" class="nav__link">Todo List</a>
+                </li>
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--calendar">
+                  <a href="" class="nav__link">Calendar</a>
+                </li>
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--reminders">
+                  <a href="" class="nav__link">Reminders</a>
+                </li>
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--planning">
+                  <a href="" class="nav__link">Planning</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav__item nav__item--dropdown">
+            <a class="nav__link" href="#">
+              Company
+            </a>
+            <div class="nav__dropdown nav__dropdown--company">
+              <ul class="nav__dropdownList">
+                <li class="nav__dropdownListItem"><a href="" class="nav__link">History</a></li>
+                <li class="nav__dropdownListItem"><a href="" class="nav__link">Our Team</a></li>
+                <li class="nav__dropdownListItem"><a href="" class="nav__link">Blog</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav__item">
-            Company
-            <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg">
-              <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
-            </svg>
+            <a class="nav__link" href="#">Careers</a>
           </li>
-          <li class="nav__item">Careers</li>
-          <li class="nav__item">About</li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">About</a>
+          </li>
         </ul>
+
         <div class="nav__buttons">
-          <button class="btn btn--secondary">Login</button>
-          <button class="btn btn--primary">Register</button>
+          <button class="nav__btn btn btn--secondary">Login</button>
+          <button class="nav__btn btn btn--primary">Register</button>
         </div>
+
       </div>
     </nav>
 
@@ -44,6 +71,54 @@
       <div class="nav__container">
         <img class="nav__logo" src="./images/logo.svg" alt="logo image">
         <img class="nav__menu-logo" src="./images/icon-menu.svg" alt="menu">
+      </div>
+      <div class="overlay"></div>
+      <div class="menu">
+        <ul class="menu__list">
+          <li class="menu__item menu__item--dropdown">
+            <a class="menu__link" href="#">
+              Features
+            </a>
+            <div class="menu__dropdown menu__dropdown--features">
+              <ul class="menu__dropdownList">
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--todoList">
+                  <a href="" class="menu__link">Todo List</a>
+                </li>
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--calendar">
+                  <a href="" class="menu__link">Calendar</a>
+                </li>
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--reminders">
+                  <a href="" class="menu__link">Reminders</a>
+                </li>
+                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--planning">
+                  <a href="" class="menu__link">Planning</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item menu__item--dropdown">
+            <a class="menu__link" href="#">
+              Company
+            </a>
+            <div class="menu__dropdown menu__dropdown--features">
+              <ul class="menu__dropdownList">
+                <li class="nav__dropdownListItem"><a href="" class="menu__link">History</a></li>
+                <li class="nav__dropdownListItem"><a href="" class="menu__link">Our Team</a></li>
+                <li class="nav__dropdownListItem"><a href="" class="menu__link">Blog</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">Careers</a>
+          </li>
+          <li class="menu__item">
+            <a class="menu__link" href="#">About</a>
+          </li>
+        </ul>
+        <div class="menu__buttons">
+          <button class="menu__btn btn btn--secondary">Login</button>
+          <button class="menu__btn btn btn--primary">Register</button>
+        </div>
       </div>
     </nav>
 
@@ -78,6 +153,7 @@
       </section>
     </div>
   </main>
+
 
   <script src="./app.js"></script>
 </body>

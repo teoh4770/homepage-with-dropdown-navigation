@@ -100,6 +100,31 @@ ul {
   padding: unset;
 }
 
+/* 
+  10. clickable object
+*/
+button {
+  cursor: pointer;
+}
+
+/* 
+  11. svg
+*/
+svg {
+  stroke: currentColor;
+}
+
+/* 
+  12. link
+*/
+
+a {
+  /* Typography */
+  text-decoration: none;
+  /* Colors */
+  color: inherit;
+}
+
 /*
   end of css reset
 */
@@ -109,6 +134,36 @@ body {
   font-family: var(--font-type);
   font-weight: 500;
   color: var(--black);
+  background-color: var(--white);
+}
+
+.btn {
+  border: transparent;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.btn--cta {
+  background-color: var(--black);
+  border: 2px solid var(--black);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+}
+
+.btn--cta:hover {
+  background-color: transparent;
+  color: var(--black);
+}
+
+.btn--primary,
+.btn--secondary {
+  color: var(--gray);
+  background-color: unset;
+}
+
+.btn--primary {
+  border: 2px solid var(--black);
+  padding: 9px 21px;
 }
 
 .nav {
@@ -141,6 +196,10 @@ body {
   color: var(--gray);
 }
 
+.menu {
+  color: var(--gray);
+}
+
 @media screen and (min-width: 960px) {
   .nav--desktop {
     display: block;
@@ -165,16 +224,6 @@ body {
   margin-left: auto;
 }
 
-.nav__list > * + * {
-  margin-left: 1.75rem;
-}
-
-.nav__item {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
 .nav__logo {
   width: 84px;
   height: 27px;
@@ -182,9 +231,41 @@ body {
   top: 5px;
 }
 
+.nav__menu-logo {
+  cursor: pointer;
+}
+
+.nav__list > * + * {
+  margin-left: 1.75rem;
+}
+
+.nav__link svg {
+  display: inline-block;
+}
+
 .nav__buttons {
   display: flex;
   gap: 2rem;
+}
+
+.nav__item--dropdown {
+  position: relative;
+}
+
+.nav__dropdown {
+  position: absolute;
+  top: 50px;
+}
+
+.nav__dropdown--features {
+  left: -100%;
+}
+
+.nav__link:hover,
+.nav__btn:hover,
+.menu__link:hover,
+.menu__btn:hover {
+  color: var(--black);
 }
 
 .hero__container {
@@ -243,29 +324,6 @@ body {
   line-height: 1.5;
 }
 
-.btn {
-  border: transparent;
-  border-radius: 0.5rem;
-  font-weight: 700;
-}
-
-.btn--cta {
-  background-color: var(--black);
-  color: var(--white);
-  padding: 0.75rem 1.25rem;
-}
-
-.btn--primary,
-.btn--secondary {
-  color: var(--gray);
-  background-color: unset;
-}
-
-.btn--primary {
-  border: 2px solid var(--black);
-  padding: 9px 21px;
-}
-
 .clients {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -282,7 +340,7 @@ body {
 
   .hero__image-container {
     display: flex;
-    align-items: end;
+    align-items: center;
   }
 }
 
@@ -297,5 +355,115 @@ body {
   }
 }
 
-.client {
+.nav__dropdown {
+  background-color: white;
+  width: max-content;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: none;
+}
+
+.nav__dropdown--open .nav__dropdown {
+  display: block;
+}
+
+.nav__dropdownList {
+  padding: 1rem;
+}
+.nav__dropdownListItem + .nav__dropdownListItem {
+  margin-block-start: 1rem;
+}
+
+.nav__dropdownListItem--withIcon {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 3fr;
+  gap: 10px;
+}
+
+.nav__dropdownListItem--withIcon::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  aspect-ratio: 1;
+  background-size: 28px 28px;
+  background-repeat: no-repeat;
+  /* filter: contrast(200%); */
+}
+
+.nav__dropdownListItem--todoList::before {
+  background-image: url("./images/checklist.png");
+}
+
+.nav__dropdownListItem--todoList:hover::before {
+  background-image: url("./images/checklist.gif");
+}
+
+.nav__dropdownListItem--calendar::before {
+  background-image: url("./images/calendar.png");
+}
+
+.nav__dropdownListItem--calendar:hover::before {
+  background-image: url("./images/calendar.gif");
+}
+
+.nav__dropdownListItem--reminders::before {
+  background-image: url("./images/notification.png");
+}
+
+.nav__dropdownListItem--reminders:hover::before {
+  background-image: url("./images/notification.gif");
+}
+
+.nav__dropdownListItem--planning::before {
+  background-image: url("./images/clock.png");
+}
+
+.nav__dropdownListItem--planning:hover::before {
+  background-image: url("./images/clock.gif");
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-color: var(--black);
+  opacity: 0.8;
+  display: none;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 240px;
+  background-color: white;
+  z-index: 100;
+  padding: 4rem 1.5rem;
+  transform: translateX(100%);
+}
+
+.menu__item + .menu__item {
+  margin-top: 1.5625rem;
+}
+
+.menu__buttons {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.menu__dropdownList {
+  padding-block-start: 1.45rem;
+  padding-left: 1rem;
+}
+
+.nav--mobile--openMenu .overlay {
+  display: block;
+}
+
+.nav--mobile--openMenu .menu {
+  transform: translateX(0);
 }
