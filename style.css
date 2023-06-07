@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@500;700&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 98%);
+  --gray: hsl(0, 0%, 41%);
+  --black: hsl(0, 0%, 8%);
+
+  --font-size: 18px;
+  --font-type: sans-serif;
+  --font-medium: 500;
+  --font-bold: 700;
+
+  --margin-inline: 1rem;
+}
+
+/*
+  Josh Comeau CSS Reset 
+*/
+
+/* 
+  1. Use a more intuitive box-sizing model
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.333;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* img {
+  width: 100%;
+} */
+
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 
+  9. list
+*/
+ul {
+  list-style-type: none;
+  padding: unset;
+}
+
+/*
+  end of css reset
+*/
+
+body {
+  font-size: 18px;
+  font-family: var(--font-type);
+  font-weight: 500;
+  color: var(--black);
+}
+
+.nav {
+  display: flex;
+  /* min-height: 60px; */
+}
+
+.nav__container {
+  padding-inline: clamp(var(--margin-inline), 7vw, 2.5rem);
+  padding-block-start: clamp(1.5rem, 7vw, 3rem);
+  padding-block-end: clamp(2.5rem, 7vw, 5rem);
+  width: 100%;
+  max-width: 1440px;
+}
+
+.nav__container,
+.nav__list,
+.nav__buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav--desktop {
+  display: none;
+}
+
+.nav--desktop .nav__container {
+  justify-content: unset;
+  color: var(--gray);
+}
+
+@media screen and (min-width: 960px) {
+  .nav--desktop {
+    display: block;
+  }
+
+  .nav--mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 1440px) {
+  .nav__container {
+    margin-inline: auto;
+  }
+}
+
+.nav--desktop .nav__list {
+  margin-left: 3.125rem;
+}
+
+.nav--desktop .nav__buttons {
+  margin-left: auto;
+}
+
+.nav__list > * + * {
+  margin-left: 1.75rem;
+}
+
+.nav__item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav__logo {
+  width: 84px;
+  height: 27px;
+  position: relative;
+  top: 5px;
+}
+
+.nav__buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+  max-width: 1150px;
+  margin-inline: clamp(var(--margin-inline), 7vw, 2.5rem);
+}
+
+@media screen and (min-width: 750px) {
+  .hero__container {
+    flex-direction: row-reverse;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .hero__container {
+    margin-inline: auto;
+  }
+
+  .hero {
+    padding-bottom: 5rem;
+  }
+}
+
+.hero__text-section {
+  display: flex;
+  flex-direction: column;
+  margin-inline: var(--margin-inline);
+}
+
+.hero__text-container {
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  .hero__text-container {
+    text-align: initial;
+    margin-top: 35%;
+    margin-bottom: 3.5rem;
+    margin-inline: unset;
+  }
+}
+
+.hero__title {
+  font-size: clamp(2.35rem, 7vw, 4rem);
+  font-weight: var(--font-bold);
+  line-height: 1.1;
+}
+
+.hero__subtitle {
+  margin-block-start: clamp(1em, 7vw, 2em);
+  margin-block-end: clamp(1.5em, 7vw, 3em);
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.btn {
+  border: transparent;
+  border-radius: 0.5rem;
+  font-weight: 700;
+}
+
+.btn--cta {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+}
+
+.btn--primary,
+.btn--secondary {
+  color: var(--gray);
+  background-color: unset;
+}
+
+.btn--primary {
+  border: 2px solid var(--black);
+  padding: 9px 21px;
+}
+
+.clients {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+
+  gap: 1rem;
+  margin-block-start: 3.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  .clients {
+    margin-top: auto;
+  }
+
+  .hero__image-container {
+    display: flex;
+    align-items: end;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .hero__subtitle {
+    width: 70%;
+  }
+
+  .hero__cta {
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+  }
+}
+
+.client {
+}

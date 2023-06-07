@@ -1,39 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Intro section with dropdown navigation</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>CheeKianTeoh | Intro section with dropdown navigation</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
 
-  Features
-  Company
-  Careers
-  About
+  <header class="header">
+    <nav class="nav nav--desktop">
+      <div class="nav__container">
+        <img class="nav__logo" src="./images/logo.svg" alt="logo image">
+        <ul class="nav__list">
+          <li class="nav__item">
+            Features
+            <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg">
+              <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
+            </svg>
+          </li>
+          <li class="nav__item">
+            Company
+            <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg">
+              <path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" />
+            </svg>
+          </li>
+          <li class="nav__item">Careers</li>
+          <li class="nav__item">About</li>
+        </ul>
+        <div class="nav__buttons">
+          <button class="btn btn--secondary">Login</button>
+          <button class="btn btn--primary">Register</button>
+        </div>
+      </div>
+    </nav>
 
-  Login
-  Register
 
-  Make remote work
+    <nav class="nav nav--mobile">
+      <div class="nav__container">
+        <img class="nav__logo" src="./images/logo.svg" alt="logo image">
+        <img class="nav__menu-logo" src="./images/icon-menu.svg" alt="menu">
+      </div>
+    </nav>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
 
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero__container">
+      <section class="hero__image-container">
+        <picture>
+          <source srcset="./images/image-hero-desktop.png" media="(min-width: 750px)">
+          <img src="./images/image-hero-mobile.png" alt="hero image">
+        </picture>
+      </section>
+      <section class="hero__text-section">
+        <div class="hero__text-container">
+          <h1 class="hero__title"><span class="hero__title-span">Make</span> remote work</h1>
+          <p class="hero__subtitle">
+            Get your team in sync, no matter your location. Streamline processes,
+            create team rituals, and watch productivity soar.
+          </p>
+          <button class="btn btn--cta">
+            Learn more
+          </button>
+        </div>
+        <section class="clients">
+          <img class="client" src="./images/client-databiz.svg" alt="databiz">
+          <img class="client" src="./images/client-audiophile.svg" alt="audiophile">
+          <img class="client" src="./images/client-meet.svg" alt="meet">
+          <img class="client" src="./images/client-maker.svg" alt="maker">
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <script src="./app.js"></script>
 </body>
+
 </html>
