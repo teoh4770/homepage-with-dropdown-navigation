@@ -12,7 +12,7 @@ class App {
     this.$menuLogo = document.querySelector(".js-nav__menu-btn");
     this.$overlay = document.querySelector(".js-overlay");
     this.$menu = document.querySelector(".js-menu");
-    this.$menuDropdown = document.querySelectorAll(".menu__item--dropdown");
+    this.$menuDropdown = document.querySelectorAll(".js-menu__item--dropdown");
 
     this.addEventListeners();
   }

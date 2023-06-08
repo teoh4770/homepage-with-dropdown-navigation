@@ -168,11 +168,6 @@ button {
   box-shadow: transparent;
 }
 
-/* 
-transform: translate(0, -3px);
-    box-shadow: 0 20px 80px -10px var(--primbuttn);
-*/
-
 .btn--primary:hover,
 .btn--secondary:hover,
 .btn--cta:hover {
@@ -438,9 +433,9 @@ transform: translate(0, -3px);
 /* end */
 
 /* Main Styling */
-/* .hero {
+.hero {
   padding-bottom: 5rem;
-} */
+}
 
 .hero__container {
   display: flex;
@@ -486,9 +481,6 @@ transform: translate(0, -3px);
   font-weight: var(--font-bold);
   line-height: 1.1;
   text-transform: capitalize;
-}
-
-.hero__title-span {
 }
 
 .color-effect {
