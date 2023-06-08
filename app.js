@@ -4,13 +4,15 @@ class App {
     this.arrowDownUrl = "./images/icon-arrow-down.svg";
 
     // $ indicates that this is an element, not variable
-    this.$dropDownNavItems = document.querySelectorAll(".nav__item--dropdown");
-    this.$navMobile = document.querySelector(".nav--mobile");
-    this.$menuLogo = document.querySelector(".nav__menu-logo");
-    this.$overlay = document.querySelector(".overlay");
-    this.$menu = document.querySelector(".menu");
+    this.$dropDownNavLinks = document.querySelectorAll(
+      ".js-nav__link--dropdown"
+    );
+    this.$navDropDowns = document.querySelectorAll(".js-nav__dropdown");
+    this.$navMobile = document.querySelector(".js-nav--mobile");
+    this.$menuLogo = document.querySelector(".js-nav__menu-btn");
+    this.$overlay = document.querySelector(".js-overlay");
+    this.$menu = document.querySelector(".js-menu");
     this.$menuDropdown = document.querySelectorAll(".menu__item--dropdown");
-    console.log(this.$menuDropdown);
 
     this.addEventListeners();
   }
@@ -23,32 +25,44 @@ class App {
     });
 
     this.$menuLogo.addEventListener("click", () => {
-      this.$navMobile.classList.add("nav--mobile--openMenu");
+      this.$navMobile.classList.add("nav--mobile--show");
     });
   }
 
   handleDropdown(event) {
-    this.$dropDownNavItems.forEach((item) => {
-      item.classList.remove("nav__dropdown--open");
+    if (event.target.closest(".js-nav__dropdown")) {
+      return;
+    }
+
+    this.$navDropDowns.forEach((dropdown) => {
+      dropdown.classList.remove("nav__dropdown--show");
     });
 
-    if (event.target.closest(".nav__item--dropdown")) {
-      const item = event.target.parentElement;
-      item.classList.add("nav__dropdown--open");
+    this.$dropDownNavLinks.forEach((link) => {
+      link.classList.remove("icon-change");
+    });
+
+    if (event.target.closest(".js-nav__link--dropdown")) {
+      const link = event.target;
+      const dropdownMenu = event.target.nextElementSibling;
+      dropdownMenu.classList.add("nav__dropdown--show");
+      link.classList.add("icon-change");
     }
   }
 
   handleMenuDropdown(event) {
     if (event.target.closest(".menu__item--dropdown")) {
-      const item = event.target.parentElement;
-      item.classList.toggle("menu__dropdown--openMenu");
+      const link = event.target;
+      const item = event.target.nextElementSibling;
+      item.classList.toggle("menu__dropdown--show");
+      link.classList.toggle("icon-change");
     }
   }
 
   closeMenu(event) {
     const overlayIsClicked = event.target.closest(".overlay");
     if (overlayIsClicked) {
-      this.$navMobile.classList.remove("nav--mobile--openMenu");
+      this.$navMobile.classList.remove("nav--mobile--show");
     }
   }
 }

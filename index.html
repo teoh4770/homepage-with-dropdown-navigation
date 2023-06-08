@@ -11,42 +11,47 @@
 </head>
 
 <body>
-
   <header class="header">
-    <nav class="nav nav--desktop">
+    <nav class="nav nav--desktop" role="navigation">
       <div class="nav__container">
         <img class="nav__logo" src="./images/logo.svg" alt="logo image">
         <ul class="nav__list">
           <li class="nav__item nav__item--dropdown">
-            <a class="nav__link" href="#">
+            <a class="nav__link nav__link--dropdown js-nav__link--dropdown" href="#">
               Features
             </a>
-            <div class="nav__dropdown nav__dropdown--features">
-              <ul class="nav__dropdownList">
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--todoList">
-                  <a href="" class="nav__link">Todo List</a>
+            <div class="nav__dropdown nav__dropdown--features js-nav__dropdown">
+              <ul class="nav__dropdown-list">
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--todoList">
+                  <a href="#" class="nav__link">Todo List</a>
                 </li>
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--calendar">
-                  <a href="" class="nav__link">Calendar</a>
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--calendar">
+                  <a href="#" class="nav__link">Calendar</a>
                 </li>
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--reminders">
-                  <a href="" class="nav__link">Reminders</a>
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--reminders">
+                  <a href="#" class="nav__link">Reminders</a>
                 </li>
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--planning">
-                  <a href="" class="nav__link">Planning</a>
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--planning">
+                  <a href="#" class="nav__link">Planning</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="nav__item nav__item--dropdown">
-            <a class="nav__link" href="#">
+            <a class="nav__link nav__link--dropdown js-nav__link--dropdown" href="#">
               Company
             </a>
-            <div class="nav__dropdown nav__dropdown--company">
-              <ul class="nav__dropdownList">
-                <li class="nav__dropdownListItem"><a href="" class="nav__link">History</a></li>
-                <li class="nav__dropdownListItem"><a href="" class="nav__link">Our Team</a></li>
-                <li class="nav__dropdownListItem"><a href="" class="nav__link">Blog</a></li>
+            <div class="nav__dropdown nav__dropdown--company js-nav__dropdown">
+              <ul class="nav__dropdown-list">
+                <li class="nav__list-item">
+                  <a href="#" class="nav__link">History</a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="#" class="nav__link">Our Team</a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="#" class="nav__link">Blog</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -57,54 +62,59 @@
             <a class="nav__link" href="#">About</a>
           </li>
         </ul>
-
-        <div class="nav__buttons">
+        <div class="nav__btns">
           <button class="nav__btn btn btn--secondary">Login</button>
           <button class="nav__btn btn btn--primary">Register</button>
         </div>
-
       </div>
     </nav>
-
-
-    <nav class="nav nav--mobile">
+    <nav class="nav nav--mobile js-nav--mobile" role="navigation">
       <div class="nav__container">
         <img class="nav__logo" src="./images/logo.svg" alt="logo image">
-        <img class="nav__menu-logo" src="./images/icon-menu.svg" alt="menu">
+        <!-- should i change this to a button -->
+        <a class="js-nav__menu-btn" href="#">
+          <img class="nav__menu-btn " src="./images/icon-menu.svg" alt="menu">
+        </a>
       </div>
-      <div class="overlay"></div>
-      <div class="menu">
+      <div class="overlay js-overlay"></div>
+      <div class="menu js-menu">
         <ul class="menu__list">
           <li class="menu__item menu__item--dropdown">
-            <a class="menu__link" href="#">
+            <a class="menu__link menu__link--dropdown" href="#">
               Features
             </a>
             <div class="menu__dropdown menu__dropdown--features">
-              <ul class="menu__dropdownList">
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--todoList">
-                  <a href="" class="menu__link">Todo List</a>
+              <ul class="menu__dropdown-list">
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--todoList">
+                  <a href="#" class="menu__link">Todo List</a>
                 </li>
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--calendar">
-                  <a href="" class="menu__link">Calendar</a>
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--calendar">
+                  <a href="#" class="menu__link">Calendar</a>
                 </li>
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--reminders">
-                  <a href="" class="menu__link">Reminders</a>
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--reminders">
+                  <a href="#" class="menu__link">Reminders</a>
                 </li>
-                <li class="nav__dropdownListItem nav__dropdownListItem--withIcon nav__dropdownListItem--planning">
-                  <a href="" class="menu__link">Planning</a>
+                <li class="nav__list-item nav__list-item--withIcon nav__list-item--planning">
+                  <a href="#" class="menu__link">Planning</a>
                 </li>
               </ul>
             </div>
           </li>
           <li class="menu__item menu__item--dropdown">
-            <a class="menu__link" href="#">
+            <a class="menu__link menu__link--dropdown" href="#">
               Company
             </a>
             <div class="menu__dropdown menu__dropdown--features">
-              <ul class="menu__dropdownList">
-                <li class="nav__dropdownListItem"><a href="" class="menu__link">History</a></li>
-                <li class="nav__dropdownListItem"><a href="" class="menu__link">Our Team</a></li>
-                <li class="nav__dropdownListItem"><a href="" class="menu__link">Blog</a></li>
+              <ul class="menu__dropdown-list">
+                <li class="nav__list-item">
+                  <a href="#" class="menu__link">History</a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="#" class="menu__link">Our Team</a>
+                </li>
+                <li class="nav__list-item">
+                  <a href="#" class="menu__link">Blog</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -115,27 +125,30 @@
             <a class="menu__link" href="#">About</a>
           </li>
         </ul>
-        <div class="menu__buttons">
+        <div class="menu__btns">
           <button class="menu__btn btn btn--secondary">Login</button>
           <button class="menu__btn btn btn--primary">Register</button>
         </div>
       </div>
     </nav>
-
-
   </header>
 
   <main class="hero">
     <div class="hero__container">
-      <section class="hero__image-container">
-        <picture>
+      <section class="hero__img-section">
+        <picture class="hero__img-container">
           <source srcset="./images/image-hero-desktop.png" media="(min-width: 750px)">
           <img src="./images/image-hero-mobile.png" alt="hero image">
         </picture>
       </section>
       <section class="hero__text-section">
         <div class="hero__text-container">
-          <h1 class="hero__title"><span class="hero__title-span">Make</span> remote work</h1>
+          <h1 class="hero__title">
+            <span class="hero__title-span">Make</span>
+            <span class="color-effect">remote</span>
+            work
+
+          </h1>
           <p class="hero__subtitle">
             Get your team in sync, no matter your location. Streamline processes,
             create team rituals, and watch productivity soar.
@@ -153,8 +166,6 @@
       </section>
     </div>
   </main>
-
-
   <script src="./app.js"></script>
 </body>
 
